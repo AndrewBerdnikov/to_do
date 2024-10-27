@@ -1,0 +1,318 @@
+body {
+    background-color: #D2D3DB;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    /* border: 1px solid black; */
+    background-image: url(<%= asset_path('bg-desktop-light.jpg') %>);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Стили для index.html.erb */
+
+.container {
+    position: relative;
+    top: 7rem;
+    width: 700px;
+    /* border: 1px solid red; */
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+.logo-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo-sign-out {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logo-moon {
+    width: 40px;
+    height: 40px;
+    margin-left: 45px;
+    user-select: none;
+}
+
+.button-new {
+    display: block;
+    padding: 30px;
+    background-color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #A1A8B3;;
+    margin-top: 43px;
+    margin-bottom: 43px;
+    border-radius: 6px;
+    padding-left: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+.tasks {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid #E5E5F1;
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #474B6A;
+    font-weight: 600;
+}
+
+.tasks-left {
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+}
+
+.tasks-right {
+    display: flex;
+    align-items: center;
+}
+
+.task-pencil {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.check-box {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    user-select: none;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 100%;
+    text-decoration: underline;
+    margin-right: 45px;
+    user-select: none;
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+.filters {
+    display: flex;
+    background-color: white;
+    width:100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-around;
+    color: #A1A8B3;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-count {
+    font-size: 14px;
+}
+
+.filters-all {
+    cursor: pointer;
+}
+
+.filters-no-complited {
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #A1A8B3;
+    font-weight: 600;
+}
+
+/* стили для edit.html.erb и new.html.erb */
+
+.container-2 {
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+    top: 12rem;
+    width: 700px;
+    max-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-style {
+    text-align: center;
+}
+
+.form-body-text {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.form-input {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #545875;
+}
+
+.form-input::placeholder {
+    color: #BCC1C9;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.form-submit {
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.form-to-main {
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* flash от device */
+
+.notice {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    color: red;
+    font-size: 25px;
+    font-weight: 600;
+    top: 5%;
+}
+
+/* стили для sessions и registrations в device */
+
+.container-3 {
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+    top: 12rem;
+    width: 700px;
+    max-height: 350px;
+    /* border: 1px solid red; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-4 {
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+    top: 12rem;
+    width: 700px;
+    max-height: 400px;
+    /* border: 1px solid red; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.device-form-title {
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.field {
+    margin: 18px;
+}
+
+.device-label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.device-input {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.device-submit {
+    margin: 5px 18px 18px 18px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+/* стили для сообщения если пользователь не авторизован */
+
+.not-authorized {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}

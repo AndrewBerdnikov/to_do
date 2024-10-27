@@ -1,0 +1,37 @@
+<% if user_signed_in? %>
+<div class="container">
+  <div class="logo">
+    <h1 class="logo-title">T O D O</h1>
+    <div class="logo-right">
+      <%= button_to 'Sign out', destroy_user_session_path, class: "logo-sign-out", method: :delete, title: "Log out of your account" %>
+      <%= image_tag "icon-moon.png", class: 'logo-moon' %>
+    </div>
+  </div>
+  <%= link_to "Create a new todo...", new_task_path, class: 'button-new' %>
+  <% @tasks.each do |task| %>
+    <div class="tasks">
+      <div class="tasks-left">
+        <span class="tasks-new"><%= check_box_tag @task, true, false, class: 'check-box' %></span>
+        <p class="tasks-body"><%= task.body %></p>
+      </div>
+      <div class="tasks-right">
+        <span><%= link_to image_tag("pencil.png", class: "task-pencil"), edit_task_path(task) %></span>
+        <span><%= button_to image_tag("icon-cross.png", class: 'delete-icon'), task_path(task), method: :delete, title: 'Delete', class: 'delete-button' %></span>
+      </div>
+    </div>  
+  <% end %>
+  <div class="filters">
+    <p class="filters-count"><%= @tasks.size %> items left</p>
+    <p class="filters-all">All</p>
+    <p class="filters-no-complited">No completed</p>
+  </div>
+  <span class="footer">Created by Andrew Berdnikov</span>
+</div>
+<% else %>
+<span class="not-authorized">
+  Welcome to the website! <br> Before you start using it, you need to log in! Or if you already have an account, log in to it!<br>
+  Please, <%= link_to 'sing in', new_user_session_path%> 
+  or 
+  <%= link_to 'sing up', new_user_registration_path %>
+</span>
+<% end %>

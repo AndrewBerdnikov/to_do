@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+<div class="container-2">
+  <h2 class="form-title">Create a new task</h2>
+  <hr>
+  <div class="form-wrapper">
+    <%= form_with model: @task, html: {class: "form-style"} do |form| %>
+      <p><%= form.label :body, 'Task text', class: "form-body-text" %></p>
+      <p><%= form.text_field :body, placeholder: 'Enter the task text...', class: "form-input" %></p>
+      <p><%= form.submit 'Create', class: "form-submit" %></p>
+      <p><%= link_to 'Main page', tasks_path, class: "form-to-main" %></p>
+    <% end %>
+  <div>
+</div>
+<% else %>
+<span>Please, <%= link_to 'sing in', new_user_session_path%> or <%= link_to 'sing up', new_user_registration_path %></span>
+<% end %>
