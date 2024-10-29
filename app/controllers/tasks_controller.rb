@@ -26,7 +26,11 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.where(user_id: (current_user.id if user_signed_in?))
+    if params[:filter] == "incomplete"
+      @tasks = Task.where(user_id: (current_user.id if user_signed_in?)).where(completed: false)
+    else
+      @tasks = Task.where(user_id: (current_user.id if user_signed_in?))
+    end
   end
 
   def new 
@@ -38,7 +42,7 @@ class TasksController < ApplicationController
 
   def toggle_complete
     @task.update(completed: !@task.completed)
-    
+
     redirect_to tasks_path
   end
 

@@ -24,8 +24,8 @@
   <% end %>
   <div class="filters">
     <p class="filters-count"><%= @tasks.size %> items left</p>
-    <p class="filters-all">All</p>
-    <p class="filters-no-complited">No completed</p>
+    <%= link_to "All", tasks_path, class: "filters-all" %>
+    <%= link_to "No completed", tasks_path(filter: "incomplete"), class: "filters-no-complited" %>
   </div>
   <span class="footer">Created by Andrew Berdnikov</span>
 </div>
