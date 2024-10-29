@@ -11,7 +11,9 @@
   <% @tasks.each do |task| %>
     <div class="tasks">
       <div class="tasks-left">
-        <span class="tasks-new"><%= check_box_tag @task, true, false, class: 'check-box' %></span>
+        <%= form_with url: toggle_complete_task_path(task), method: :patch do %>
+          <%= check_box_tag :completed, true, task.completed, onchange: "this.form.submit();", class: 'check-box' %>
+        <% end %>
         <p class="tasks-body"><%= task.body %></p>
       </div>
       <div class="tasks-right">

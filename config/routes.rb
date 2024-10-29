@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do 
+    member do
+      patch :toggle_complete
+    end
+  end
 
   root to: "tasks#index"
   

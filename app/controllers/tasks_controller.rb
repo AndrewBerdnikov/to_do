@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[update destroy edit]
+  before_action :set_task, only: %i[update destroy edit toggle_complete]
 
   def create
     @task = Task.new(task_params)
@@ -34,6 +34,12 @@ class TasksController < ApplicationController
   end
 
   def edit
+  end
+
+  def toggle_complete
+    @task.update(completed: !@task.completed)
+    
+    redirect_to tasks_path
   end
 
   private 
