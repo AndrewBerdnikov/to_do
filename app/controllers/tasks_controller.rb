@@ -1,29 +1,25 @@
 class TasksController < ApplicationController
-  before_action 
+  before_action :set_task, only: %i[update destroy edit]
 
   def create
-    Task.create(
-      body: params[:task][:body],
-      user_id: current_user.id,
-      completed: false
-    )
+    @task = Task.new(task_params)
 
-    redirect_to tasks_path
+    if @task.save
+      redirect_to tasks_path
+    else
+      flash.now[:alert] = "Incorrect parameters for the task"
+
+      render :new
+    end
   end
 
   def update 
-    @task = Task.find(params[:id])
-    @task.update(
-      body: params[:task][:body],
-      user_id: current_user.id,
-      completed: false
-    )
+    @task.update(task_params)
 
     redirect_to tasks_path
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
 
     redirect_to tasks_path
@@ -38,6 +34,16 @@ class TasksController < ApplicationController
   end
 
   def edit
+  end
+
+  private 
+
+  def task_params
+    params.require(:task).permit(:body).merge(user_id: current_user.id, completed: false)
+  end
+
+  def set_task
     @task = Task.find(params[:id])
   end
+
 end
