@@ -10,8 +10,6 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'devise'
 
-gem "tzinfo-data", platforms: %i[ windows jruby ]
-
 gem "bootsnap", require: false
 
 group :development, :test do
