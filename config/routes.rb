@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root to: "tasks#index"
   
   devise_for :users
-  get 'persons/profile', as: 'user_root'
+  get 'users/profile', as: 'user_root'
 end
