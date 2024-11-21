@@ -102,6 +102,19 @@ body {
     user-select: none;
 }
 
+.task-priority-container {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.task-priority {
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+    user-select: none;
+}
+
 .check-box {
     width: 25px;
     height: 25px;
