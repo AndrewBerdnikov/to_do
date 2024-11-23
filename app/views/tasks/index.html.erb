@@ -17,6 +17,7 @@
         <p class="tasks-body"><%= task.body %></p>
       </div>
       <div class="tasks-right">
+          <span><%= task.category %></span>
         <span><%= link_to image_tag("pencil.png", class: "task-pencil"), edit_task_path(task) %></span>
         <span><%= button_to image_tag("icon-cross.png", class: 'delete-icon'), task_path(task), method: :delete, title: 'Delete', class: 'delete-button' %></span>
       </div>

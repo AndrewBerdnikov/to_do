@@ -6,6 +6,7 @@
     <%= form_with model: @task, html: {class: "form-style"}, data: {turbo: false} do |form| %>
       <p><%= form.label :body, 'Task text', class: "form-body-text" %></p>
       <p><%= form.text_field :body, placeholder: 'Enter the task text...', class: "form-input" %></p>
+      <p><%= form.select :category, options_for_select([['Other', 'other'], ['Sports', 'sports'], ['Work', 'work'], ['Hobbies', 'hobbies'], ['Study', 'study']], @task.category)%></p>
       <p><%= form.submit 'Create', class: "form-submit" %></p>
       <p><%= link_to 'Main page', tasks_path, class: "form-to-main" %></p>
     <% end %>
